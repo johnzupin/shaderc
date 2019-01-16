@@ -1,8 +1,8 @@
-shaderc (2018.0~dev+51-1) UNRELEASED; urgency=medium
+shaderc (2018.0~dev+51-1lunarg16.04.1.1) xenial; urgency=medium
 
   * new upstream version
 
- -- Jeremy Hayes <jeremy@centaurus>  Thu, 15 Nov 2018 17:54:45 -0700
+ -- Jeremy Hayes <jeremy@centaurus>  Thu, 15 Nov 2018 17:59:14 -0700
 
 shaderc (2018.0~dev+35-1) unstable; urgency=medium
 
