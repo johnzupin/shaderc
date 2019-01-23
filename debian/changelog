@@ -1,3 +1,9 @@
+shaderc (2018.0~dev+70-1lunarg16.04.1.1) xenial; urgency=medium
+
+  * new upstream version
+
+ -- John Zupin <john@odin>  Thu, 17 Jan 2019 15:25:39 -0700
+
 shaderc (2018.0~dev+51-1lunarg16.04.1.1) xenial; urgency=medium
 
   * new upstream version
