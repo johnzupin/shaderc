@@ -17,7 +17,7 @@ include /usr/share/dpkg/default.mk
 
 
 %:
-	dh $@
+	dh $@ --parallel
 
 # Do this manually before building instead.
 #update_sources:
