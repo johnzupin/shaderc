@@ -3,7 +3,7 @@
 
 # First param is the commit in the known_good.json on the known_good branch
 #+ inside the shaderc repo
-[ -z "$1" ] && echo "Must supply the upstream commit to build on" && exit 1
+[ -z "$1" ] && echo "Must supply the upstream commit that package will be built on" && exit 1
 
 UPSTREAM_COMMIT=$1
 # LATEST_TAG_INFO[0]: Latest Tag
