@@ -15,7 +15,6 @@ include /usr/share/dpkg/default.mk
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-
 %:
 	dh $@ --parallel
 
@@ -48,9 +47,20 @@ override_dh_auto_install:
 	cd debian/build && DESTDIR=${CURDIR}/debian/tmp ninja install
 
 override_dh_install:
-	# gtest headers conflict with libgtest-dev
+        # gtest headers conflict with libgtest-dev
 	rm -fr debian/tmp/usr/include/gtest
 	dh_install --fail-missing
+
+DISTRO := $(shell dpkg-parsechangelog -S Distribution)
+ifeq ($(DISTRO),bionic)
+    SUBSTVARS = python3-distutils,\n python3-distutils-extra,
+else
+    SUBSTVARS =
+endif
+.PHONY: debian/control
+debian/control:
+	sed -e 's/__DISTDEPS__/$(SUBSTVARS)/g' \
+	    < debian/control.in > debian/control
 
 gentarball: SOURCE=shaderc
 gentarball: UV=$(shell dpkg-parsechangelog|awk '/^Version:/ {print $$2}'|sed 's/-[^-]*$$//')

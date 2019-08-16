@@ -2,7 +2,7 @@ Source: shaderc
 Section: libdevel
 Priority: optional
 Maintainer: Brett Johnson <brett@linuxturtle.net>
-Build-Depends: __DISTDEPS__
+Build-Depends:  __DISTDEPS__
  debhelper (>=9),
  cmake,
  binutils,
