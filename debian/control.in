@@ -1,7 +1,7 @@
 Source: shaderc
 Section: libdevel
 Priority: optional
-Maintainer: Brett Johnson <brett@linuxturtle.net>
+Maintainer: John Zupin <johnz@lunarg.com>
 Build-Depends:  __DISTDEPS__
  debhelper (>=9),
  cmake,
