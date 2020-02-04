@@ -1,3 +1,9 @@
+shaderc (2019.0+175-1ubuntu16.04.1.1) xenial; urgency=medium
+
+  * Automated package build
+
+ -- John Zupin <john@odin>  Tue, 21 Jan 2020 14:00:18 -0700
+
 shaderc (2019.0+162-1ubuntu16.04.1.1) xenial; urgency=medium
 
   * Automated package build
