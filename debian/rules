@@ -45,6 +45,7 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	cd debian/build && DESTDIR=${CURDIR}/debian/tmp ninja install
+	cp debian/build/libshaderc_util/libshaderc_util.a debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/
 
 override_dh_install:
         # gtest headers conflict with libgtest-dev
