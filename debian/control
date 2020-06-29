@@ -3,7 +3,8 @@ Section: graphics
 Priority: optional
 Maintainer: John Zupin <johnz@lunarg.com>
 Build-Depends: debhelper (>= 10),
- cmake
+ cmake,
+ python3
 Standards-Version: 4.1.2
 Homepage: https://github.com/google/shaderc/
 Vcs-Git: https://github.com/google/shaderc/
