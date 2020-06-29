@@ -1,0 +1,5 @@
+shaderc (2020.0+15-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- John Zupin <john@unknown>  Mon, 29 Jun 2020 15:54:26 -0600
