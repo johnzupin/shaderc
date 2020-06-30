@@ -1,4 +1,4 @@
-shaderc (2020.0+15-1) unstable; urgency=medium
+shaderc (2020.0-15-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
