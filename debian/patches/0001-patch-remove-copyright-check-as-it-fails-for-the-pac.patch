@@ -1,0 +1,40 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Mon, 27 Jul 2020 16:20:50 -0600
+Subject: patch: remove copyright check as it fails for the packaging
+ structure
+
+---
+ CMakeLists.txt | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6392d2b..5cb6665 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -83,16 +83,16 @@ endif()
+ 
+ find_host_package(PythonInterp 3 REQUIRED)
+ 
+-add_custom_target(check-copyright ALL
+-  ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/utils/add_copyright.py
+-  --check
+-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-  COMMENT "Check copyright")
+-
+-add_custom_target(add-copyright
+-  ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/utils/add_copyright.py
+-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-  COMMENT "Add copyright")
++# add_custom_target(check-copyright ALL
++#   ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/utils/add_copyright.py
++#   --check
++#   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++#   COMMENT "Check copyright")
++
++# add_custom_target(add-copyright
++#   ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/utils/add_copyright.py
++#   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++#   COMMENT "Add copyright")
+ 
+ if(MSVC)
+   option(SHADERC_ENABLE_SHARED_CRT
