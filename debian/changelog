@@ -1,3 +1,83 @@
+shaderc (2020.2-1lunarg18.04-1) bionic; urgency=medium
+
+  [ Ryan Harrison ]
+  * Roll third_party/spirv-cross/ 61cddd630..d385bf096 (4 commits) (#1077)
+
+  [ Bryan B ]
+  * Support forcing storage buffers to be always declared as UAV. (#1076)
+
+  [ Ryan Harrison ]
+  * Rolling 5 dependencies (#1078)
+  * Finalize shaderc v2020.1
+  * Start shaderc v2020.2
+  * Remove infrastructure for and references to VS2013 (#1082)
+  * Rolling 5 dependencies and update expectations (#1081)
+
+  [ David Neto ]
+  * Update for Glslang generator version number 9 (#1083)
+
+  [ Idan Raiter ]
+  * Add minimum buffer size for dawn reflection (#1084)
+
+  [ Ryan Harrison ]
+  * Rolling 5 dependencies (#1085)
+  * Add support for different default/trunks in roll-deps (#1086)
+  * Roll 5 dependencies and update tests/expectations (#1087)
+
+  [ xhcao ]
+  * Add interface for enabling 16-bit types (#1091)
+
+  [ David Neto ]
+  * Glslang third party build needs -fPIC (#1093)
+  * glslc and spvc understand -h as the same as --help (#1089)
+
+  [ Ryan Harrison ]
+  * Roll 6 dependencies and update expectations. (#1097)
+
+  [ Ben Clayton ]
+  * Remove pushing / popping -fPIC for glslang  (#1098)
+
+  [ John Zupin ]
+  * rules: add flag to not install spirv-headers
+  * rules: disable dh_auto_test
+  * Updated DEPS file for testing
+
+  [ Jiajie Hu ]
+  * Improve how GN finds auto-generated SPIRV-Tools headers (#1101)
+
+  [ David Neto ]
+  * Roll-deps: effcee trunk is "main" now (#1096)
+  * Add CMake support for buildint Tint in third_party (#1090)
+
+  [ Ryan Harrison ]
+  * Roll 5 dependencies (#1102)
+
+  [ Ben Clayton ]
+  * License checker (#1104)
+  * Kokoro: Migrate linux bots to ubuntu docker image
+  * Mingw - use `posix` toolchain flavor (#1108)
+  * Update license-checker.cfg with simplified rules (#1107)
+
+  [ Ryan Harrison ]
+  * Roll 5 dependencies and update expectations (#1111)
+
+  [ David Neto ]
+  * glslc: Add -mfmt=wgsl output format option (#1110)
+
+  [ John Zupin ]
+  * copyright: updated for release
+
+  [ David Neto ]
+  * Use the non-posix MinGW compiler as fallback (#1117)
+  * Roll third_party/glslang/ 9eef54b25..3ee5f2f1d (11 commits)
+  * Update CHANGES
+  * Finalize shaderc v2020.2
+
+  [ John Zupin ]
+  * patch: copyright check
+
+ -- John Zupin <john@odin>  Mon, 27 Jul 2020 16:22:53 -0600
+
 shaderc (2020.0-15-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
