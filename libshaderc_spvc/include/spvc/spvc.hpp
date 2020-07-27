@@ -295,6 +295,12 @@ class CompileOptions {
         options_.get(), b);
   }
 
+  // If true, enable 16-bit types.  Default is false.
+  shaderc_spvc_status SetHLSLEnable16BitTypes(bool b) {
+    return shaderc_spvc_compile_options_set_hlsl_enable_16bit_types(
+        options_.get(), b);
+  }
+
   // If true, set non-writable storage images to be SRV, see spirv_hlsl.hpp in
   // SPIRV-Cross for more details.
   shaderc_spvc_status SetHLSLNonWritableUAVTextureAsSRV(bool b) {
@@ -568,6 +574,12 @@ class Context {
     types->resize(type_count);
     return shaderc_spvc_get_output_stage_type_info(context_.get(),
                                                    types->data(), &type_count);
+  }
+
+  // Set storage buffers to be always declared as UAV, even if the read-only 
+  // declaration is used, see spirv_hlsl.hpp in SPIRV-Cross for more details.
+  shaderc_spvc_status SetHLSLForceStorageBufferAsUAV(uint32_t desc_set, uint32_t binding) {
+    return shaderc_spvc_set_hlsl_force_storage_buffer_as_uav(context_.get(), desc_set, binding);
   }
 
  private:
