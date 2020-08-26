@@ -1,0 +1,21 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Wed, 26 Aug 2020 13:14:34 -0600
+Subject: add obj-x86_64-linux-gnu folder to be excluded in add_copyright.py
+
+---
+ utils/add_copyright.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/utils/add_copyright.py b/utils/add_copyright.py
+index d1ede56..c80c146 100755
+--- a/utils/add_copyright.py
++++ b/utils/add_copyright.py
+@@ -62,7 +62,7 @@ def filtered_descendants(glob):
+     """Returns glob-matching filenames under the current directory, but skips
+     some irrelevant paths."""
+     return find('.', glob, ['third_party', 'external', 'build*', 'out*',
+-                            'CompilerIdCXX'])
++                            'CompilerIdCXX', 'obj-x86_64-linux-gnu'])
+ 
+ 
+ def skip(line):
