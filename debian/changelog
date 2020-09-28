@@ -1,3 +1,38 @@
+shaderc (2020.3-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Start shaderc v2020.3 development
+
+  [ Ryan Harrison ]
+  * Clean up issues discovered by Infer
+  * Rolling 2 dependencies and updating expectations (#1121)
+
+  [ ponitka ]
+  * Adding support for the additional fixed sample mask in MSL (#1120)
+
+  [ dan sinclair ]
+  * Update some language usage. (#1124)
+
+  [ John Zupin ]
+  * copyright: updated debian/ files
+  * copyright: add newline at EOF
+  * debian: remove README.Debian
+
+  [ Ryan Harrison ]
+  * Roll 5 dependencies and update expectations (#1129)
+  * Add support for Dawn using deprecated Options constructor (#1130)
+  * Roll 4 dependencies (#1131)
+  * Roll 4 dependencies and updated expectations (#1132)
+
+  [ John Zupin ]
+  * patch: add  obj-x86_64-linux-gnu folder to be excluded in add_copyright.py
+
+  [ Ryan Harrison ]
+  * Roll 3 dependencies and update expectations (#1133)
+  * Finalize SPIRV-Tools v2020.3
+
+ -- John Zupin <john@odin>  Mon, 28 Sep 2020 17:10:20 -0600
+
 shaderc (2020.2-1lunarg20.04-1) focal; urgency=medium
 
   [ Ryan Harrison ]
