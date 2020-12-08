@@ -1,3 +1,30 @@
+shaderc (2020.3-11-1lunarg20.04-1) focal; urgency=medium
+
+  [ Ryan Harrison ]
+  * Start SPIRV-Tools v2020.4
+  * Remove spvc (#1135)
+  * Adding back non-spvc BUILD.gn that I accidentally nuked (#1136)
+
+  [ Lei Zhang ]
+  * Handle alias libraries in shaderc_combined to avoid duplicated symbols (#1141)
+
+  [ Ryan Harrison ]
+  * Roll 6 dependencies (#1144)
+
+  [ David Neto ]
+  * Roll back googletest to earlier version
+  * Replace C-style cast with static_cast
+  * Roll third_party/glslang/ 142cb87f8..7f6559d28 (13 commits)
+  * Roll dependencies to support Vulkan raytracing
+  * copyright check: Exclude .venv in source tree
+  * Update SPIRV-Tools, SPIRV-Headers, glslang with raytracing fixes
+
+  [ John Zupin ]
+  * packaging: update copyright
+  * packaging: rebase patches
+
+ -- John Zupin <john@odin>  Tue, 08 Dec 2020 10:44:17 -0700
+
 shaderc (2020.3-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
