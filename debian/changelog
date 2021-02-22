@@ -1,3 +1,26 @@
+shaderc (2020.5~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ Ryan Harrison ]
+  * Rolling 5 dependencies (#1161)
+  * Updated CHANGES
+  * Finalize v2020.4
+  * Start shaderc v2020.5
+  * Roll 4 dependencies (#1165)
+  * Deprecate WebGPU SPIRV support (#1167)
+
+  [ David Neto ]
+  * Improve file+line parsing from Glslang messages
+  * Fix typo
+
+  [ Jose Quaresma ]
+  * cmake: add option to skip build the examples (#1170)
+
+  [ David Neto ]
+  * Roll third_party/glslang/ 9325cc013..e56beaee7 (19 commits)
+  * Finalize Shaderc v2020.5
+
+ -- John Zupin <john@odin>  Mon, 22 Feb 2021 15:47:31 -0700
+
 shaderc (2020.3-11-1lunarg18.04-1) bionic; urgency=medium
 
   [ Ryan Harrison ]
