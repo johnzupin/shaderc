@@ -1,3 +1,9 @@
+shaderc (2020.5~rc2-1lunarg20.04-1) focal; urgency=medium
+
+  * packaging: updated LunarG's copyrights
+
+ -- John Zupin <john@odin>  Thu, 25 Feb 2021 14:04:16 -0700
+
 shaderc (2020.5~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Ryan Harrison ]
