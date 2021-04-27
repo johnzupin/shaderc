@@ -1,3 +1,26 @@
+shaderc (2021.0~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2021.0
+
+  [ David Adrian ]
+  * Rename io.h to io_shaderc.h
+
+  [ Ryan Harrison ]
+  * Complete moving io.* to io_shaderc.*
+
+  [ John Zupin ]
+  * packaging: update the debian/copyright file
+
+  [ Ben Clayton ]
+  * Update license-checker.cfg with updated license names
+
+  [ David Neto ]
+  * Update DEPS
+  * Finalize v2021.0
+
+ -- John Zupin <john@odin>  Tue, 27 Apr 2021 13:39:47 -0600
+
 shaderc (2020.5~rc2-1lunarg18.04-1) bionic; urgency=medium
 
   * packaging: updated LunarG's copyrights
