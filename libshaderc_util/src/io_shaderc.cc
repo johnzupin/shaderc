@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "libshaderc_util/io.h"
+#include "libshaderc_util/io_shaderc.h"
 
 #include "libshaderc_util/universal_unistd.h"
 
@@ -24,6 +24,7 @@
 #endif
 
 #include <errno.h>
+
 #include <cstdio>
 #include <cstring>
 #include <fstream>
@@ -105,7 +106,7 @@ std::ostream* GetOutputStream(const string_piece& output_filename,
     stream = file_stream;
     if (file_stream->fail()) {
       *err << "glslc: error: cannot open output file: '" << output_filename
-                << "'";
+           << "'";
       if (access(output_filename.str().c_str(), W_OK) != 0) {
         OutputFileErrorMessage(errno);
         return nullptr;
