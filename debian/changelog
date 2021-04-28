@@ -1,3 +1,9 @@
+shaderc (2021.0~rc2-1lunarg20.04-1) focal; urgency=medium
+
+  * packaing: update DEPS for new glslang version
+
+ -- John Zupin <john@odin>  Wed, 28 Apr 2021 10:32:27 -0600
+
 shaderc (2021.0~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
