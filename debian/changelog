@@ -1,3 +1,9 @@
+shaderc (2021.0~rc2-1lunarg18.04-1) bionic; urgency=medium
+
+  * packaing: update DEPS for new glslang version
+
+ -- John Zupin <john@odin>  Wed, 28 Apr 2021 10:29:04 -0600
+
 shaderc (2021.0~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ David Neto ]
