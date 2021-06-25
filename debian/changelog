@@ -1,3 +1,41 @@
+shaderc (2021.1-1~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Start v2021.1 development
+
+  [ Rainis Randmaa ]
+  * Fix typo in README.md (#1189)
+
+  [ David Neto ]
+  * glslc tests: handle failure to load .py module
+
+  [ Robin Quint ]
+  * Exposed GLSLang's option to combine textures and samplers automatically.
+  * Added -fauto-sampled-textures test and renamed functions
+
+  [ David Neto ]
+  * Rename auto-sampled-image to auto-combined-image-sampler
+  * Fixed and reformatted -fauto-combine-image-sampler test
+
+  [ Pavel Kalugin ]
+  * glslc: main.cc: update help: debug info disclaimer (#1193)
+
+  [ Ian McKellar ]
+  * Add explicit copy constructor for string_piece (#1194)
+
+  [ sriramm-nv ]
+  * Fix shaderc util test to pass the correct shader_stage (#1197)
+
+  [ Jaebaek Seo ]
+  * Update DEPS for spirv-tools, spirv-headers, and glslang (#1198)
+
+  [ David Neto ]
+  * Disable support for OpenGL compatibility profile
+  * Finalize Shaderc v2021.1
+  * Start Shaderc v2021.2 development
+
+ -- John Zupin <john@odin>  Fri, 25 Jun 2021 14:36:43 -0600
+
 shaderc (2021.0~rc2-1lunarg20.04-1) focal; urgency=medium
 
   * packaing: update DEPS for new glslang version
