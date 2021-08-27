@@ -1,3 +1,14 @@
+shaderc (2021.2~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ Ryan Harrison ]
+  * Add external COmmon Lisp bindings to README.md (#1209)
+
+  [ David Neto ]
+  * Update DEPS
+  * Finalize v2021.2
+
+ -- John Zupin <john@odin>  Fri, 27 Aug 2021 15:47:35 -0600
+
 shaderc (2021.1-1~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ David Neto ]
