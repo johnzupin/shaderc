@@ -1,3 +1,17 @@
+shaderc (2021.3~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ David Neto ]
+  * Start v2021.3 development
+
+  [ Bob Ellison ]
+  * build: add switch to disable copyright check
+
+  [ David Neto ]
+  * Update DEPS: glslang, spirv-tools, spirv-headers
+  * Finalize v2021.3, update DEPS
+
+ -- John Zupin <john@odin>  Tue, 16 Nov 2021 16:35:25 -0700
+
 shaderc (2021.2~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ Ryan Harrison ]
