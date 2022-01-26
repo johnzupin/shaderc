@@ -3,7 +3,7 @@ Upstream-Name: shaderc
 Source: https://github.com/google/shaderc
 
 Files: *
-Copyright: 2021, LunarG Inc
+Copyright: 2022, LunarG Inc
 License: Apache-2.0
 
 Files: Android.mk
@@ -42,7 +42,7 @@ Copyright: 2017-2020, Google Inc
 License: Apache-2.0
 
 Files: debian/*
-Copyright: 2021, LunarG Inc
+Copyright: 2022, LunarG Inc
 License: BSD-3-clause or GPL-3 or MIT
 
 Files: utils/git-sync-deps
