@@ -6,10 +6,10 @@ vars = {
 
   'googletest_revision': 'd9c309fdab807b716c2cf4d4a42989b8c34f712a',
   'effcee_revision' : '2ec8f8738118cc483b67c04a759fee53496c5659',
-  'glslang_revision': 'c34bb3b6c55f6ab084124ad964be95a699700d34',
+  'glslang_revision': 'abbe466451ca975fecfdba453ef9073df52aefc5',
   're2_revision': '7107ebc4fbf7205151d8d2a57b2fc6e7853125d4',
-  'spirv_headers_revision': 'b42ba6d92faf6b4938e6f22ddd186dbdacc98d78',
-  'spirv_tools_revision': 'b846f8f1dc2d79f2b5ce27d5ad901f885da1cf82',
+  'spirv_headers_revision': '9c3fd01c8a91761b6e4be97ff4f13de76e779128',
+  'spirv_tools_revision': 'eed5c76a57bb965f2e1b56d1dc40b50910b5ec1d',
 }
 
 deps = {
