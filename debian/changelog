@@ -1,3 +1,14 @@
+shaderc (2022.1-2~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Start v2022.2 development
+  * Update deps, adjust glslc test
+
+  [ John Zupin ]
+  * packaging: fix DEPS to reflect known-good.json
+
+ -- john <john@odin>  Thu, 09 Jun 2022 09:59:38 -0600
+
 shaderc (2022.1~rc2-1lunarg20.04-1) focal; urgency=medium
 
   [ John Zupin ]
