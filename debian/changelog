@@ -1,3 +1,14 @@
+shaderc (2022.1-2~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ David Neto ]
+  * Start v2022.2 development
+  * Update deps, adjust glslc test
+
+  [ John Zupin ]
+  * packaging: fix DEPS to reflect known-good.json
+
+ -- john <john@odin>  Thu, 09 Jun 2022 09:56:08 -0600
+
 shaderc (2022.1~rc2-1lunarg18.04-1) bionic; urgency=medium
 
   [ John Zupin ]
