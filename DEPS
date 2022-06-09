@@ -7,10 +7,11 @@ vars = {
   'effcee_revision' : '5af957bbfc7da4e9f7aa8cac11379fa36dd79b84',
   'googletest_revision': 'd9c309fdab807b716c2cf4d4a42989b8c34f712a',
   'effcee_revision' : '2ec8f8738118cc483b67c04a759fee53496c5659',
-  'glslang_revision': 'abbe466451ca975fecfdba453ef9073df52aefc5',
+  'glslang_revision': '4c3e00bf960121c9a1729f1935ab7912b7f651a8',
+  'googletest_revision': '389cb68b87193358358ae87cc56d257fd0d80189',
   're2_revision': '7107ebc4fbf7205151d8d2a57b2fc6e7853125d4',
-  'spirv_headers_revision': '9c3fd01c8a91761b6e4be97ff4f13de76e779128',
-  'spirv_tools_revision': 'eed5c76a57bb965f2e1b56d1dc40b50910b5ec1d',
+  'spirv_headers_revision': 'b930e734ea198b7aabbbf04ee1562cf6f57962f0',
+  'spirv_tools_revision': 'b930e734ea198b7aabbbf04ee1562cf6f57962f0',
 }
 
 deps = {
