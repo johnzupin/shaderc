@@ -1,3 +1,18 @@
+shaderc (2022.2~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Jeff Moguillansky ]
+  * CMakeLists: enable CMAKE_MSVC_RUNTIME_LIBRARY property
+
+  [ David Neto ]
+  * Fix DEPS for spirv-headers
+  * Guard CMake policy CMP0091
+  * Add support for 16b-bit types in HLSL (with tests) (#1253)
+  * Use docker for android bots, requre cmake 3.14 or later
+  * Update DEPS
+  * Finalize Shaderc v2202.2
+
+ -- john <john@odin>  Tue, 16 Aug 2022 11:59:19 -0600
+
 shaderc (2022.1-2~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
