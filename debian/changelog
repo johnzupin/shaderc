@@ -1,3 +1,20 @@
+shaderc (2022.4~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ David Neto ]
+  * Start v2202.4-dev development
+
+  [ Nathan Gauër ]
+  * tests: update tests' glslangvalidator version (#1275)
+
+  [ Lei Zhang ]
+  * Add 'BUNDLE DESTINATION' for target install
+
+  [ David Neto ]
+  * Update DEPS
+  * Finalize Shaderc v2022.4
+
+ -- john <john@odin>  Thu, 08 Dec 2022 11:22:10 -0700
+
 shaderc (2022.3~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ David Neto ]
