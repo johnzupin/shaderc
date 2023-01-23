@@ -1,3 +1,23 @@
+shaderc (2023.1~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2022.5 development
+  * Remove GCC-based code coverage builds
+  * Update CMake to 3.17.2 (#1289)
+
+  [ Ben Clayton ]
+  * Explicitly construct a `string_piece` when comparing to `char*`
+
+  [ David Neto ]
+  * roller: use 'main' for spirv-tools, spirv-headers, re2
+  * Update DEPS
+  * Finalize Shaderc v2023.1
+
+  [ John Zupin ]
+  * packaging: debian: update copyright
+
+ -- john <john@odin>  Mon, 23 Jan 2023 12:10:19 -0700
+
 shaderc (2022.4~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ David Neto ]
