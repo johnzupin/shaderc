@@ -1,0 +1,135 @@
+name: build-ubuntu-packages
+run-name: Build Debian style packages for Ubuntu
+on:
+  push:
+  workflow_call:
+    inputs:
+      spirv_headers:
+        required: false
+        type: string
+        default: '{"repo":"","ref":""}'
+      spirv_tools:
+        required: false
+        type: string
+        default: '{"repo":"","ref":""}'
+      glslang:
+        required: false
+        type: string
+        default: '{"repo":"","ref":""}'
+      shaderc:
+        required: true
+        type: string
+        default: '{"repo":"johnzupin/shaderc","ref":"ubuntu/focal"}'
+        description: "A json object that defines repo and ref. Ex) {repo:johnzupin/shaderc, ref:ubuntu/focal}"
+  workflow_dispatch:
+    inputs:
+      spirv_headers:
+        required: false
+        type: string
+        default: '{"repo":"","ref":""}'
+      spirv_tools:
+        required: false
+        type: string
+        default: '{"repo":"","ref":""}'
+      glslang:
+        required: false
+        type: string
+        default: '{"repo":"","ref":""}'
+      shaderc:
+        required: true
+        type: string
+        default: '{"repo":"johnzupin/shaderc","ref":"ubuntu/focal"}'
+        description: "A json object that defines repo and ref. Ex) {repo:johnzupin/shaderc, ref:ubuntu/focal}"
+
+jobs:
+  get-shaderc-deps:
+    runs-on: ubuntu-latest
+    outputs:
+      spirv-headers-repo: ${{ steps.deps-refs.outputs.SPIRV_HEADERS_REPO }}
+      spirv-headers-ref: ${{ steps.deps-refs.outputs.SPIRV_HEADERS_REF }}
+      spirv-tools-repo: ${{ steps.deps-refs.outputs.SPIRV_TOOLS_REPO }}
+      spriv-tools-ref: ${{ steps.deps-refs.outputs.SPIRV_TOOLS_REF }}
+      glslang-repo: ${{ steps.deps-refs.outputs.GLSLANG_REPO }}
+      glslang-ref: ${{ steps.deps-refs.outputs.GLSLANG_REF }}
+      shaderc-repo: ${{ steps.deps-refs.outputs.SHADERC_REPO }}
+      shaderc-ref: ${{ steps.deps-refs.outputs.SHADERC_REF }}
+    steps:
+      - name: "Inputs have been specified - Set repo/ref variables with specified input"
+        if: ${{ inputs.shaderc != '' }}
+        run: |
+          echo SPIRV_HEADERS_REPO="${{ fromJSON(inputs.spirv_headers).repo }}" >> "$GITHUB_ENV"
+          echo SPIRV_HEADERS_REF="${{ fromJSON(inputs.spirv_headers).ref }}" >> "$GITHUB_ENV"
+          echo SPIRV_TOOLS_REPO="${{ fromJSON(inputs.spirv_tools).repo }}" >> "$GITHUB_ENV"
+          echo SPIRV_TOOLS_REF="${{ fromJSON(inputs.spirv_tools).ref }}" >> "$GITHUB_ENV"
+          echo GLSLANG_REPO="${{ fromJSON(inputs.glslang).repo }}" >> "$GITHUB_ENV"
+          echo GLSLANG_REF="${{ fromJSON(inputs.glslang).ref }}" >> "$GITHUB_ENV"
+          echo SHADERC_REPO="${{ fromJSON(inputs.shaderc).repo }}" >> "$GITHUB_ENV"
+          echo SHADERC_REF="${{ fromJSON(inputs.shaderc).ref }}" >> "$GITHUB_ENV"
+      - name: "No inputs specified - Checkout repository to get dependency versions from repository DEPS file" 
+        if: ${{ inputs.shaderc == '' }}
+        uses: actions/checkout@v3
+      - name: "No input specified - Parse the DEPS file"
+        if: ${{ inputs.shaderc == '' }}
+        run: |
+          # WARNING: the spirv-headers repo is hardcoded to johnzupin org, this needs to change to Khronos when /debian gets merged
+          echo SPIRV_HEADERS_REPO="johnzupin/SPIRV-Headers" >> "$GITHUB_ENV"
+          echo SPIRV_HEADERS_REF=`grep -m1 'spirv_headers_revision' DEPS | tr -d \ \', | cut -d: -f2` >> "$GITHUB_ENV"
+          echo SPIRV_TOOLS_REPO="johnzupin/SPIRV-Tools" >> "$GITHUB_ENV"
+          echo SPIRV_TOOLS_REF=`grep -m1 'spirv_tools_revision' DEPS | tr -d \ \', | cut -d: -f2` >> "$GITHUB_ENV"
+          echo GLSLANG_REPO="johnzupin/glslang" >> "$GITHUB_ENV"
+          echo GLSLANG_REF=`grep -m1 'glslang_revision' DEPS | tr -d \ \', | cut -d: -f2` >> "$GITHUB_ENV"
+          echo SHADERC_REPO="$GITHUB_REPOSITORY" >> "$GITHUB_ENV"
+          echo SHADERC_REF="$GITHUB_REF_NAME" >> "$GITHUB_ENV"
+      - id: deps-refs
+        run: |
+          echo SPIRV_HEADERS_REPO="${{ env.SPIRV_HEADERS_REPO }}" >> "$GITHUB_OUTPUT"
+          echo SPIRV_HEADERS_REF="${{ env.SPIRV_HEADERS_REF }}" >> "$GITHUB_OUTPUT"
+          echo SPIRV_TOOLS_REPO="${{ env.SPIRV_TOOLS_REPO }}" >> "$GITHUB_OUTPUT"
+          echo SPIRV_TOOLS_REF="${{ env.SPIRV_TOOLS_REF }}" >> "$GITHUB_OUTPUT"
+          echo GLSLANG_REPO="${{ env.GLSLANG_REPO }}" >> "$GITHUB_OUTPUT"
+          echo GLSLANG_REF="${{ env.GLSLANG_REF }}" >> "$GITHUB_OUTPUT"
+          echo SHADERC_REPO="${{ env.SHADERC_REPO }}" >> "$GITHUB_OUTPUT"
+          echo SHADERC_REF="${{ env.SHADERC_REF }}" >> "$GITHUB_OUTPUT"
+
+  build-spirv-headers-package:
+    needs: "get-shaderc-deps"
+    if: ${{ needs.get-shaderc-deps.outputs.spirv-headers-repo != '' && needs.get-shaderc-deps.outputs.spirv-headers-ref != '' }}
+    uses: johnzupin/SPIRV-Headers/.github/workflows/build-ubuntu-packages.yml@zupin_create_workflow_ubuntu_package
+    with:
+      spirv_headers: '{"repo":"${{ needs.get-shaderc-deps.outputs.spirv-headers-repo }}","ref":"${{ needs.get-shaderc-deps.outputs.spirv-headers-ref }}"}'
+
+  build-spirv-tools-package:
+    needs: [ "get-shaderc-deps", "build-spirv-headers-package" ]
+    if: ${{ needs.get-shaderc-deps.outputs.spirv-tools-repo != '' && needs.get-shaderc-deps.outputs.spirv-tools-ref != '' }}
+    uses: johnzupin/SPIRV-Tools/.github/workflows/build-ubuntu-packages.yml@zupin_create_workflow_ubuntu_package
+    with:
+      spirv_tools: '{"repo":"${{ needs.get-shaderc-deps.outputs.spirv-tools-repo }}","ref":"${{ needs.get-shaderc-deps.outputs.spirv-tools-ref }}"}'
+
+  build-glslang-package:
+    needs: [ "get-shaderc-deps", "build-spirv-headers-package", "build-spirv-tools-package"]
+    if: ${{ needs.get-shaderc-deps.outputs.glslang-repo != '' && needs.get-shaderc-deps.outputs.glslang-ref != '' }}
+    uses: johnzupin/glslang/.github/workflows/build-ubuntu-packages.yml@zupin_create_workflow_ubuntu_package
+    with:
+      glslang: '{"repo":"${{ needs.get-shaderc-deps.outputs.glslang-repo }}","ref":"${{ needs.get-shaderc.outputs.glslang-ref }}"}'
+
+  build-shaderc-amd64-focal-package:
+    needs: [ "get-shaderc-deps", "build-spirv-headers-package", "build-spirv-tools-package", "build-glslang-package" ]
+    if: ${{ needs.build-spirv-headers-package.result == 'skipped' || needs.build-spirv-tools-package.result == 'skipped' || needs.build-glslang-package.result == 'skipped' || success() }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+    steps:
+      - run: |
+          apt-get update && \
+          DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
+          git cmake build-essential git-buildpackage python3 debhelper
+      - uses: actions/checkout@v3
+        with:
+          repository: "${{needs.get-shaderc-ref.outputs.shaderc-repo}}"
+          ref: "${{needs.get-shaderc-deps.outputs.shaderc-ref}}"
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - run: "gbp buildpackage --git-verbose --git-force-create --git-upstream-tree=branch --git-ignore-branch --git-upstream-branch=${{needs.get-shaderc-deps.outputs.shaderc-ref}} --no-sign"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "shaderc-focal-package"
+          path: "${{ runner.workspace }}/shaderc*20.04*amd64.deb"
