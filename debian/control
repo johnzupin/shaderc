@@ -4,7 +4,10 @@ Priority: optional
 Maintainer: John Zupin <johnz@lunarg.com>
 Build-Depends: debhelper (>= 10),
  cmake,
- python3
+ python3,
+ glslang-tools,
+ spirv-headers,
+ spirv-tools
 Standards-Version: 4.1.2
 Homepage: https://github.com/google/shaderc/
 Vcs-Git: https://github.com/google/shaderc/

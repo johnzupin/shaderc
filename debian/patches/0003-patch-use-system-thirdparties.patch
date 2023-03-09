@@ -1,0 +1,63 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Thu, 9 Mar 2023 15:21:47 -0700
+Subject: patch: use system thirdparties
+
+---
+ CMakeLists.txt       | 12 ++++++------
+ glslc/CMakeLists.txt |  6 +++---
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 48c6b1d..0a67615 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -130,7 +130,7 @@ endif(MSVC)
+ 
+ # Configure subdirectories.
+ # We depend on these for later projects, so they should come first.
+-add_subdirectory(third_party)
++#add_subdirectory(third_party)
+ 
+ add_subdirectory(libshaderc_util)
+ add_subdirectory(libshaderc)
+@@ -139,11 +139,11 @@ if(${SHADERC_ENABLE_EXAMPLES})
+     add_subdirectory(examples)
+ endif()
+ 
+-add_custom_target(build-version
+-  ${PYTHON_EXECUTABLE}
+-  ${CMAKE_CURRENT_SOURCE_DIR}/utils/update_build_version.py
+-  ${shaderc_SOURCE_DIR} ${spirv-tools_SOURCE_DIR} ${glslang_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/build-version.inc
+-  COMMENT "Update build-version.inc in the Shaderc build directory (if necessary).")
++#add_custom_target(build-version
++  #${PYTHON_EXECUTABLE}
++  #${CMAKE_CURRENT_SOURCE_DIR}/utils/update_build_version.py
++  #${shaderc_SOURCE_DIR} ${spirv-tools_SOURCE_DIR} ${glslang_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/build-version.inc
++  #COMMENT "Update build-version.inc in the Shaderc build directory (if necessary).")
+ 
+ function(define_pkg_config_file NAME LIBS)
+   add_custom_target(${NAME}-pkg-config ALL
+diff --git a/glslc/CMakeLists.txt b/glslc/CMakeLists.txt
+index c8fa6d5..74b8309 100644
+--- a/glslc/CMakeLists.txt
++++ b/glslc/CMakeLists.txt
+@@ -43,7 +43,7 @@ if (SHADERC_ENABLE_WGSL_OUTPUT)
+ endif(SHADERC_ENABLE_WGSL_OUTPUT)
+ 
+ target_link_libraries(glslc PRIVATE
+-  glslang OSDependent OGLCompiler HLSL glslang SPIRV    # Glslang libraries
++  HLSL glslang SPIRV MachineIndependent OSDependent OGLCompiler GenericCodeGen    # Glslang libraries
+   $<$<BOOL:${SHADERC_ENABLE_WGSL_OUTPUT}>:libtint>      # Tint libraries, optional
+   shaderc_util shaderc                                  # internal Shaderc libraries
+   ${CMAKE_THREAD_LIBS_INIT})
+@@ -52,8 +52,8 @@ add_executable(glslc_exe src/main.cc)
+ shaderc_default_compile_options(glslc_exe)
+ target_include_directories(glslc_exe PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/.. ${spirv-tools_SOURCE_DIR}/include)
+ set_target_properties(glslc_exe PROPERTIES OUTPUT_NAME glslc)
+-target_link_libraries(glslc_exe PRIVATE glslc shaderc_util shaderc)
+-add_dependencies(glslc_exe build-version)
++target_link_libraries(glslc_exe PRIVATE glslc shaderc_util shaderc_static)
++# add_dependencies(glslc_exe build-version)
+ 
+ shaderc_add_tests(
+   TEST_PREFIX glslc
