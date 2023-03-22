@@ -1,3 +1,31 @@
+shaderc (2023.3~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ David Neto ]
+  * Start v2023.2 development
+  * Update DEPS for SPIRV-Tools v2023.1
+  * Finalize v2023.2
+  * Start Shaderc v2023.3 development
+
+  [ Nathan Gauër ]
+  * build: move from c++11 to c++17
+
+  [ Jakub Kuderski ]
+  * Add option to preserve bindings
+
+  [ David Neto ]
+  * roll-deps: glslang now uses 'main' instead of 'master' (#1304)
+
+  [ Steven Perron ]
+  * Change glslang trunk to main (#1303)
+
+  [ David Neto ]
+  * Roll third party dependencies
+  * Don't promise support for VS2015
+  * Update DEPS
+  * Finalize v2023.3
+
+ -- john <john@odin>  Wed, 22 Mar 2023 10:11:07 -0600
+
 shaderc (2023.1~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ David Neto ]
