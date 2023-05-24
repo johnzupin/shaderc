@@ -1,3 +1,21 @@
+shaderc (2023.4~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Don't promise support for VS2015
+  * Update DEPS
+  * Finalize v2023.3
+  * Start Shaderc v2023.4 development
+  * kokoro: Remove VS2015 scripts, add VS2019 scripts
+  * kokoro: Remove SPVC-related flags from CI scripts
+  * Add VS2019 download links, remove VS2015 download links
+  * Add options to control mesh shading limits
+  * Android.mk: Use $(file ..) instead of raw @echo. Update to NDK 21d
+  * kokoro: convert ndk-build to use docker
+  * Update dependencies
+  * Finalize Shaderc v2023.4
+
+ -- john <john@odin>  Wed, 24 May 2023 14:30:57 -0600
+
 shaderc (2023.3~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
