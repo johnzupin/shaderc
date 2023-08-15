@@ -1,3 +1,38 @@
+shaderc (2023.6~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2023.5-dev
+
+  [ Steven Perron ]
+  * Add abseil as a dep (#1329)
+
+  [ David Neto ]
+  * Document dependency on Abseil (#1330)
+  * Increase Android API level for test project (#1333)
+  * Build libshaderc_combined for all ABIs (#1334)
+  * Update all DEPS except re2
+
+  [ Steven Perron ]
+  * Use android ndk r25 (#1341)
+  * Update Android NDK version in the README. (#1342)
+
+  [ Charles Giessen ]
+  * Fix MSVC runtime library linking in CMake (#1339)
+
+  [ David Neto ]
+  * MSVC 2017 debug build requires /bigobj for SPIRV-Tools test_opt (#1346)
+  * Update DEPS (#1344)
+  * Make release candidate v2023.5-rc1 (#1347)
+  * Update Glslang in DEPS (#1348)
+  * Finalize Shaderc v2023.5
+  * Start Shaderc v2023.6 development
+  * Update DEPS: SPIRV-Tools, Glslang, SPIRV-Headers
+  * Build target was renamed from glslangValidator to glslang-standalone
+  * Add kokoro/linux/presubmit_mingw_release.cfg
+  * Finalize v2023.6
+
+ -- john <john@odin>  Tue, 15 Aug 2023 15:43:20 -0600
+
 shaderc (2023.4~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
