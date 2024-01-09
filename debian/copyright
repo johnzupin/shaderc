@@ -589,7 +589,7 @@ Comment: No explicit license found, using license(s) from:
  third_party/spirv-tools/utils/vscode/src/lsp/LICENSE
 
 Files: debian/*
-Copyright: 2023, LunarG Inc <johnz@lunarg.com>
+Copyright: 2024, LunarG Inc <johnz@lunarg.com>
 License: BSD-3-clause or GPL-3 or MIT
 
 License: Apache-2
