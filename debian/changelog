@@ -1,3 +1,50 @@
+shaderc (2023.8~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Start v2026.7-dev
+  * Update README.md: Need a C++17 compiler
+  * Remove redundant gtest compile flags for MinGW
+  * Adapt test to different error message from SPIRV-Tools
+
+  [ Natalie Chouinard ]
+  * Add a workflow to automatically roll DEPS (#1358)
+
+  [ David Neto ]
+  * cmake: Remove redundant -std=c++11 flag
+  * ndk-build: Require C++17 (#1373)
+
+  [ Steven Perron ]
+  * Roll deps & fix tests (#1372)
+
+  [ David Neto ]
+  * Update DEPS
+  * Make Shaderc v2023.7-rc1 release candidate
+  * Shaderc v2303.7 release
+  * Start Shaderc v2023.8-dev
+
+  [ Tyler Kropp ]
+  * Use TARGET_OBJECTS to replace archive acrobatics
+
+  [ Dan Field ]
+  * Expose setting relaxed Vulkan rules from glslang
+  * initialize no matter what
+
+  [ David Neto ]
+  * update Glslang and remove references to libs it has removed (#1384)
+
+  [ Stuart Millman ]
+  * Fix for cmake policy CMP0148 (#1382)
+
+  [ David Neto ]
+  * Update deps
+  * Finalize Shaderc v2023.8
+
+  [ John Zupin ]
+  * packaging: debian: update to force python3
+  * packaging: debian: update copyright
+
+ -- john <john@odin>  Tue, 09 Jan 2024 11:39:55 -0700
+
 shaderc (2023.6~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
