@@ -1,3 +1,21 @@
+shaderc (2024.0~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2024.0-dev
+  * Utility scripts use python3 explicitly (#1389)
+  * Update DEPS (#1390)
+  * Update DEPS (#1395)
+  * Update DEPS (#1402)
+
+  [ moritz-h ]
+  * Fix Python (#1401)
+
+  [ David Neto ]
+  * Update DEPS
+  * Finalize Shaderc v2024.0
+
+ -- john <john@odin>  Tue, 12 Mar 2024 09:51:23 -0600
+
 shaderc (2023.8~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ David Neto ]
