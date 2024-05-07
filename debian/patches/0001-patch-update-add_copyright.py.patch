@@ -7,7 +7,7 @@ Subject: patch: update add_copyright.py"
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/utils/add_copyright.py b/utils/add_copyright.py
-index ab3c5f1..c944469 100755
+index 7ea0897..23b9f46 100755
 --- a/utils/add_copyright.py
 +++ b/utils/add_copyright.py
 @@ -62,7 +62,7 @@ def filtered_descendants(glob):
