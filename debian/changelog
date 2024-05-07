@@ -1,3 +1,18 @@
+shaderc (2024.1~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2024.1
+  * Update DEPS (#1409)
+  * Propagate test/install options to Glslang. Update Glslang (#1397)
+  * Update DEPS
+  * Finalize Shaderc v2024.1
+
+  [ John Zupin ]
+  * packaging: update how shdaderc is built
+  * debian: patch: do not install glslang
+
+ -- john <john@odin>  Tue, 07 May 2024 09:06:31 -0600
+
 shaderc (2024.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ David Neto ]
