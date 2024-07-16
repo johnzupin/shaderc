@@ -1,3 +1,27 @@
+shaderc (2024.1+9~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2024.2-dev
+
+  [ Trice Helix ]
+  * Fix comment typo in shaderc.hpp
+
+  [ alan-baker ]
+  * Update DEPS (#1417)
+
+  [ David Neto ]
+  * Update dependencies
+  * Update dependencies, except Glslang
+  * Remove VS2017 from README and download links
+  * Remove kokoro scripts for VS2017
+  * Finalize Shaderc v2024.2, update dependencies
+  * Finalize Shaderc v2024.2
+
+  [ John Zupin ]
+  * packaging: debian: update DEPS to match SDK
+
+ -- john <john@odin>  Tue, 16 Jul 2024 11:19:02 -0600
+
 shaderc (2024.1~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ David Neto ]
