@@ -1,3 +1,19 @@
+shaderc (2024.3~rc1-1lunarg24.04-1) noble; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2024.3-dev
+  * Fix expectations: Glslang orders decorations on an object by enum
+  * Fix Python string escapes
+  * kokoro: use Python 3.12 on Linux
+  * update DEPS: glslang, spirv-tools, spirv-headers (#1440)
+  * Update deps, adapt ndk-build glsang dpeendencies
+  * Don't use friendly names for SPIR-V validation errors (#1442)
+  * Update deps: glslang, spirv-tools
+  * Update DEPS: Glslang
+  * Finalize Shaderc v2024.3
+
+ -- john <john@odin>  Tue, 01 Oct 2024 09:47:24 -0600
+
 shaderc (2024.1+9~rc1-1lunarg24.04-1) noble; urgency=medium
 
   [ David Neto ]
