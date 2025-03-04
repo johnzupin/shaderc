@@ -1,3 +1,26 @@
+shaderc (2025.1~rc1-1lunarg24.04-1) noble; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2024.5 development
+  * Update glslang, SPIRV-Tools
+  * kokoro: use CMake 3.31.2
+  * kokoro: windows: use Python 3.12
+  * Update cmake_minimum_required to 3.22.1
+  * Update effcee, spirv-tools
+  * kokoro: add VS2022 scripts
+  * kokoro: delete VS 2019 debug build
+  * Update spirv-tools, spirv-headers, Glslang
+  * kokoro: use gcc 13
+  * kokoro: use clang 13
+  * kokoro: use ndk-r27c
+  * Update dependencies
+  * kokoro: use streamlined license-check image
+  * kokoro: linux: use cpp-builder instead of radial-build
+  * Update dependencies
+  * Finalize Shaderc v2025.1
+
+ -- john <john@odin>  Tue, 04 Mar 2025 09:29:32 -0700
+
 shaderc (2024.4~rc1-1lunarg24.04-1) noble; urgency=medium
 
   [ David Neto ]
