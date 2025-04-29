@@ -1,3 +1,19 @@
+shaderc (2025.2~rc1-1lunarg24.04-1) noble; urgency=medium
+
+  [ David Neto ]
+  * Start Shaderc v2025.2 development
+  * update deps
+  * Update dependencies
+
+  [ Jeff Bolz ]
+  * update glslang dependency
+
+  [ David Neto ]
+  * Update to SPIRV-Tools v2025.2.rc2, SPIRV-Headers
+  * Finalize Shaderc v2025.2
+
+ -- john <john@odin>  Tue, 29 Apr 2025 09:53:04 -0600
+
 shaderc (2025.1~rc1-1lunarg24.04-1) noble; urgency=medium
 
   [ David Neto ]
